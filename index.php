@@ -10,12 +10,15 @@
     <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
 
     <!-- Style -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Sweet Alert -->
+    <script src="http://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
     <main>
@@ -31,6 +34,7 @@
             <div class="button-calc-container">
                 <a href="#" id="button-calc">Calcular</a>
             </div>
+            
             <div id="sin-respuesta">...Aún no hay nada que calcular, ingresa un número y clic en calcular...</div>
             <div id="resultado-container">
                 <h3 id="titu-respuesta">Respuesta:</h3>
@@ -41,6 +45,7 @@
             </div>
         </div>
     </main>
-    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>

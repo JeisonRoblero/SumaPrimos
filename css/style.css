@@ -4,7 +4,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-image: url(images/fondo.jpg);
+    background-image: url(../images/fondo.jpg);
 }
 
 main {
@@ -70,7 +70,8 @@ main {
     margin-top: 30px;
 }
 
-#button-calc {
+#button-calc,
+#button-login {
     background: rgb(44, 168, 114);
     box-shadow: 10px 10px 60px -11px rgba(0,0,0,0.75);
     color: white;
@@ -80,8 +81,23 @@ main {
     text-decoration: none;
 }
 
-#button-calc:hover {
+#button-calc:hover,
+#button-login:hover {
     background: rgb(23, 87, 59);
+}
+
+#button-no-user {
+    background: rgb(37, 104, 142);
+    box-shadow: 10px 10px 60px -11px rgba(0,0,0,0.75);
+    color: white;
+    border-radius: 1rem;
+    font-size: 1.6rem;
+    padding: 15px;
+    text-decoration: none;
+}
+
+#button-no-user:hover {
+    background: rgb(21, 53, 72);
 }
 
 #sin-respuesta {

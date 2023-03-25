@@ -9,6 +9,7 @@ buttonCalc.addEventListener('click', () => {
     const sumaNumeros = document.querySelector('#suma-numeros');
     let suma = 0;
     let numerosSumados = "";
+    let numerosSumadosC = "";
     let numeroInt = parseInt(numero);
 
     if (numeroInt < 0 || typeof numeroInt != 'number' || !Number.isInteger(numeroInt)) {
@@ -26,8 +27,12 @@ buttonCalc.addEventListener('click', () => {
 
         sinRespuesta.style.display = 'none';
         resultadoContainer.style.display = 'block';
-        sumaNumeros.innerHTML = numerosSumados.substring(0,numerosSumados.length - 2);
+        numerosSumadosC = numerosSumados.substring(0,numerosSumados.length - 2);
+        sumaNumeros.innerHTML = numerosSumadosC;
         resultado.innerHTML = ' = ' + suma;
+
+        window.location.href = "./?numerosSumados="+numerosSumadosC+"&resultado="+suma;
+
     }
 
 });
