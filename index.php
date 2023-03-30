@@ -33,6 +33,15 @@ if(!isset($p)){
 
     <!-- Sweet Alert -->
     <script src="http://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <style>
+            #ultimo + div {
+                visibility: hidden;
+            }
+            
+            .disclaimer {
+                visibility: hidden;
+            }
+    </style>
 </head>
 <body>
 
@@ -48,5 +57,8 @@ if(!isset($p)){
 
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <div id="ultimo">
+	    
+    </div>
 </body>
 </html>
