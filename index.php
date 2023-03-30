@@ -1,3 +1,14 @@
+<?php
+include "configs/config.php";
+include "configs/funciones.php";
+
+if(!isset($p)){
+	$p = "main";
+}else{
+	$p = $p;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,35 +28,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 
+    <!-- Iconos -->
+    <script src="https://kit.fontawesome.com/a3c0bc2905.js" crossorigin="anonymous"></script>
+
     <!-- Sweet Alert -->
     <script src="http://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
+
     <main>
-        <div class="content-container">
-            <h1 class="header-title">CALCULADORA DE NÚMEROS PRIMOS</h1>
-            <div class="line"></div>
-            <p class="main-instructions">Ingrese un número: </p>
-            <input type="number" name="number" id="number" class="main-input-number" placeholder="0">
-            <span class="main-description">
-                NOTA: Al número ingresado se le encontrarán todos sus números primos inferiores y se sumarán
-                Debe de ser un número entero positivo. <br>
-            </span>
-            <div class="button-calc-container">
-                <a href="#" id="button-calc">Calcular</a>
-            </div>
-            
-            <div id="sin-respuesta">...Aún no hay nada que calcular, ingresa un número y clic en calcular...</div>
-            <div id="resultado-container">
-                <h3 id="titu-respuesta">Respuesta:</h3>
-                <div class="respuesta-container">
-                    <p id="suma-numeros">1+2</p>
-                    <p id="resultado">3</p>
-                </div>
-            </div>
-        </div>
+
+        <?php
+			if(file_exists("modulos/".$p.".php")){
+				include "modulos/".$p.".php";
+			}else{
+				echo "<i>Aún estamos trabajando en el modulo <b>".$p."</b>, lo tendremos pronto listo para tí ;) <a href='./'>Regresar</a></i>"; 
+			}
+		?>
+
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/app.js"></script>
 </body>
 </html>

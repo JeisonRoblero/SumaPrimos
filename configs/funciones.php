@@ -1,8 +1,7 @@
 <?php
 include "config.php";
 
-	function Conectarse()
-   {
+	function Conectarse(){
      global $host_mysql, $puerto, $user_mysql, $pass_mysql, $db_mysql;
  
      if (!($link = mysqli_connect($host_mysql, $user_mysql, $pass_mysql))) 
@@ -16,9 +15,16 @@ include "config.php";
         echo "Error seleccionando la base de datos.<br>"; 
         exit(); 
       }
-   return $link; 
+   	return $link; 
     } 
 
+	function esPrimo($n) {
+		if ($n == 0 || $n == 1 || $n == 4) return false;
+		for($i = 2; $i < $n/2; $i++) {
+			if ($n % $i == 0) return false;
+		}
+		return true;
+	}
 
 	//Funciones
 	function clear($var){
@@ -27,7 +33,7 @@ include "config.php";
 	}
 
 	function check_admin(){
-		if (!isset($_SESSION['id'])) {
+		if (!isset($_SESSION['id_usuario'])) {
 			redir("./");
 		}
 	}
@@ -71,13 +77,13 @@ include "config.php";
 		}
 	}
 
-	function nombre_cliente($id_cliente){
+	function nombre_usuario($id_usuario){
 		$link = Conectarse();
-		$query = "SELECT * FROM cliente WHERE id = '$id_cliente'";
+		$query = "SELECT * FROM usuario WHERE id_usuario = '$id_usuario'";
 		$q = mysqli_query($link, $query);
 
 		$r = mysqli_fetch_array($q);
-		return $r['name'];
+		return $r['nombre'];
 	}
 
 	function nombre_admin($id){

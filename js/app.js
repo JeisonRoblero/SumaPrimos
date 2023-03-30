@@ -31,8 +31,6 @@ buttonCalc.addEventListener('click', () => {
         sumaNumeros.innerHTML = numerosSumadosC;
         resultado.innerHTML = ' = ' + suma;
 
-        window.location.href = "./?numerosSumados="+numerosSumadosC+"&resultado="+suma;
-
     }
 
 });
