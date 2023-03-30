@@ -2,7 +2,7 @@
 Aplicación web de suma de números primos inferiores del número ingresdo por el usuario. 
 
 # Enlace al programa
-Disponible en: http://localhost/Tareas_Suma_Primos/Programa_Suma_Primos/
+Disponible en: https://jeisonroblero.000webhostapp.com/SumaPrimos/
 
 # Capturas de Pantalla
 ![image](https://user-images.githubusercontent.com/89631773/228746500-1c849e21-fc6a-4036-9a16-0ef9f516f525.png)
