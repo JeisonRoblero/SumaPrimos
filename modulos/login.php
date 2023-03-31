@@ -3,19 +3,8 @@ if(isset($send)){
 	$correo = clear($correo);
 	$contra = clear($contra); 
 
-   $link = Conectarse();
- 
-   $query = "SELECT * FROM usuario WHERE correo = '$correo' AND contraseña = '$contra'";
- 
-   $q = mysqli_query($link, $query); 
-
-	if(mysqli_num_rows($q)>0){
-		$r = mysqli_fetch_array($q);
-		$_SESSION['id_usuario'] = $r['id_usuario'];
-		redir("?p=login");
-	}else{
-		alert("Los datos no son validos",0,'login');
-	}
+    $objUsuario = new Usuario();
+    $objUsuario->login($correo, $contra);
 }
 
 if (isset($_SESSION['id_usuario'])) {

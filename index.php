@@ -1,6 +1,8 @@
 <?php
 include "configs/config.php";
 include "configs/funciones.php";
+include "clases/Usuario.php";
+include "clases/Calculo.php";
 
 if(!isset($p)){
 	$p = "main";
@@ -32,7 +34,7 @@ if(!isset($p)){
     <script src="https://kit.fontawesome.com/a3c0bc2905.js" crossorigin="anonymous"></script>
 
     <!-- Sweet Alert -->
-    <script src="http://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <style>
             #ultimo + div {
                 visibility: hidden;

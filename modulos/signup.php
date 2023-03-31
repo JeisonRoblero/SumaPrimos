@@ -1,12 +1,14 @@
 <?php
 
 if (isset($send)) {
+    // Limpiando variables de caracteres html especiales
 	$nombre = clear($nombre);
 	$apellido = clear($apellido);
 	$telefono = clear($telefono);
 	$correo = clear($correo);
 	$contra = clear($contra);
 
+    // Consultando a la base de datos el correo ingresado para verificar si ya existe el usuario
 	$link = conectarse();
 	$sql = "SELECT * FROM usuario WHERE correo = '$correo'";
 	$q=mysqli_query($link, $sql);
@@ -14,19 +16,8 @@ if (isset($send)) {
 	if (mysqli_fetch_array($q)>0) {
 		alert("Ya existe un usuario con el mismo correo o nombre de usuario",0,'registrarse');
 	}else{
-		$link = conectarse();
-		$sql = "INSERT INTO usuario (nombre,apellido,telefono,correo,contraseña) VALUES ('$nombre','$apellido','$telefono','$correo','$contra')";
-		mysqli_query($link, $sql);
-
-		$link = conectarse();
-		$sql = "SELECT * FROM usuario WHERE correo = '$correo' AND contraseña = '$contra'";
-		$ss = mysqli_query($link, $sql);
-
-		$rss = mysqli_fetch_array($ss);
-
-		$_SESSION['id_usuario'] = $rss['id_usuario'];
-
-		alert("Registro realizado con exito!",1,'main');
+        $objUsuario = new Usuario();
+        $objUsuario->agregarUsuario($contra, $apellido, $nombre, $telefono, $correo);
 	}
 
 }
